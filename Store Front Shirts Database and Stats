@@ -1,0 +1,74 @@
+CREATE TABLE shirt (id INTEGER PRIMARY KEY, color TEXT, size TEXT, aisle TEXT, price TEXT); 
+
+
+INSERT INTO shirt VALUES (1, "Pink", "Medium", 1, 12);
+INSERT INTO shirt VALUES (2, "Blue", "Large", 2, 13);
+INSERT INTO shirt VALUES (3, "Black", "Small", 3, 11);
+INSERT INTO shirt VALUES (4, "Grey", "Medium", 4, 12);
+INSERT INTO shirt VALUES (5, "Blue", "Large", 2, 13);
+INSERT INTO shirt VALUES (6, "Blue", "X-Large", 3, 15);
+INSERT INTO shirt VALUES (7, "Pink", "Small", 1, 11);
+INSERT INTO shirt VALUES (8, "Grey", "Medium", 4, 12);
+INSERT INTO shirt VALUES (9, "Black", "X-Large", 3, 15);
+INSERT INTO shirt VALUES (10, "Black", "X-Small", 3, 11);
+INSERT INTO shirt VALUES (11, "Pink", "Medium", 1, 12);
+INSERT INTO shirt VALUES (12, "Pink", "Large", 1, 13);
+INSERT INTO shirt VALUES (13, "Blue", "Medium", 3, 12);
+INSERT INTO shirt VALUES (14, "Grey", "Large", 4, 13);
+INSERT INTO shirt VALUES (15, "Black", "Small", 3, 11);
+
+
+
+SELECT * FROM shirt Order BY AISLE;
+SELECT sum(PRICE) FROM shirt;
+SELECT * FROM shirt ORDER BY AISLE;
+SELECT sum(PRICE) FROM shirt;
+SELECT * FROM shirt WHERE price <10 ORDER BY AISLE 
+
+
+DATABASE SCHEMA
+
+shirt 15 rows
+id (PK) INTEGER
+color TEXT
+size TEXT
+aisle TEXT
+price TEXT
+QUERY RESULTS
+
+id	color	size	aisle	price
+1	Pink	Medium	1	12
+7	Pink	Small	1	11
+11	Pink	Medium	1	12
+12	Pink	Large	1	13
+2	Blue	Large	2	13
+5	Blue	Large	2	13
+3	Black	Small	3	11
+6	Blue	X-Large	3	15
+9	Black	X-Large	3	15
+10	Black	X-Small	3	11
+13	Blue	Medium	3	12
+15	Black	Small	3	11
+4	Grey	Medium	4	12
+8	Grey	Medium	4	12
+14	Grey	Large	4	13
+sum(PRICE)
+186
+id	color	size	aisle	price
+1	Pink	Medium	1	12
+7	Pink	Small	1	11
+11	Pink	Medium	1	12
+12	Pink	Large	1	13
+2	Blue	Large	2	13
+5	Blue	Large	2	13
+3	Black	Small	3	11
+6	Blue	X-Large	3	15
+9	Black	X-Large	3	15
+10	Black	X-Small	3	11
+13	Blue	Medium	3	12
+15	Black	Small	3	11
+4	Grey	Medium	4	12
+8	Grey	Medium	4	12
+14	Grey	Large	4	13
+sum(PRICE)
+186
