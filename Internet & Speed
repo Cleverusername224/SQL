@@ -1,0 +1,21 @@
+SELECT
+count distinct(cust.acctid) AS "Accounts",
+cust.customer_segment,
+cust.payment_history,
+plans.internet_plan
+
+FROM DB.customers cust 
+
+LEFT JOIN DB.planinfo plans 
+ON cust.acctid=plans.custid 
+
+WHERE plans.internet_plan IN ("Top Tier Internet", "Second Highest Tier Internet")
+AND cust.last_payment_date BETWEEN '2022-01-01' AND '2022-01-31'
+
+GROUP BY 
+cust.customer_segment,
+cust.payment_history,
+plans.internet_plan 
+
+ORDER BY
+cust.customer_segment 
